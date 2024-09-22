@@ -4,10 +4,12 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class VerifyCurrentUrl {
 
-	public static void main(String[] args) 
+	@Test
+	void CurrentUrl() 
 	{
 
 		WebDriver driver= new ChromeDriver();
@@ -16,9 +18,9 @@ public class VerifyCurrentUrl {
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		
 		String ExpectedUrl= "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
-		String ActualUrl=driver.getCurrentUrl();
+		
 	
-		if(ExpectedUrl.equals(ActualUrl));
+		if(driver.getCurrentUrl().equals(ExpectedUrl))
 		{
 			System.out.println("URL verification passed");
 		}
@@ -31,4 +33,3 @@ public class VerifyCurrentUrl {
 
 	}
 
-}

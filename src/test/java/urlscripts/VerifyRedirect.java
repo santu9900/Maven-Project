@@ -4,10 +4,12 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class VerifyRedirect {
+	@Test
+	void Redirect()
 
-	public static void main(String[] args) 
 	{
 		WebDriver driver= new ChromeDriver();
 		driver.manage().window().maximize();
@@ -15,9 +17,9 @@ public class VerifyRedirect {
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		
 		String ExpectedUrl= "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
-		String ActualUrl=driver.getCurrentUrl();
+		
 	
-		if(ActualUrl.equals(ExpectedUrl));
+		if(driver.getCurrentUrl().equals(ExpectedUrl))
 		{
 			System.out.println("URL verification passed");
 		}

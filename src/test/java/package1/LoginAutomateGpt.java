@@ -20,8 +20,9 @@ public class LoginAutomateGpt
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		
 		String ExpectedUrl="https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
-		driver.getCurrentUrl();
-		if(driver.getCurrentUrl().equals(ExpectedUrl));{
+	
+		if(driver.getCurrentUrl().equals(ExpectedUrl))
+		{
 			System.out.println("Login Successful and home page is displayed");
 		}else
 		{
